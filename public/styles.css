@@ -133,3 +133,17 @@ form.create-note button:hover {
 .deleteAll:hover {
   background-color: #a45058 !important;
 }
+
+header button {
+  position: absolute;
+  top: 19px;
+  right: 20px;
+  color: #4c566a;
+  border: none;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  outline: none;
+  background: transparent;
+  color: white;
+}
