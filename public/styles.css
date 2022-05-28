@@ -42,13 +42,13 @@ footer {
 }
 
 footer p {
-  color: rgb(0, 0, 0);
+  color: rgb(204, 204, 204);
 }
 
 .note {
   background: #fff;
-  border-radius: 7px;
-  box-shadow: 0 2px 5px #ccc;
+  border-radius: 0.5em;
+  box-shadow: 0 2px 5px rgb(204, 204, 204);
   padding: 10px;
   width: 240px;
   margin: 16px;
@@ -84,12 +84,16 @@ footer p {
 form.create-note {
   position: relative;
   width: 480px;
-  margin: 30px auto 20px auto;
-  background: #fff;
-  padding: 15px;
-  border-radius: 7px;
-  box-shadow: 0 1px 5px rgb(138, 137, 137);
+  margin: 10px auto 20px auto;
+  padding: 10px;
+  background-color: white;
+  border-radius: 0.5em;
+  box-shadow: 0 2px 5px rgb(204, 204, 204);
   z-index: 1;
+}
+
+form.create-note input {
+  font-weight: bold;
 }
 
 form.create-note input,
@@ -103,14 +107,8 @@ form.create-note textarea {
   resize: none;
 }
 
-form.create-note textarea {
-  font-size: 1em !important;
-}
-
 form.create-note button {
-  position: absolute;
-  right: 18px;
-  bottom: -18px;
+  margin-right: 10px;
   background-color: #4c566a;
   color: white;
   border: none;
@@ -120,8 +118,18 @@ form.create-note button {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
   cursor: pointer;
   outline: none;
+  transition: 0.3s ease;
 }
 
 form.create-note button:hover {
   background-color: #2e3440;
+}
+
+.deleteAll {
+  float: right;
+  background-color: #bf616a !important;
+}
+
+.deleteAll:hover {
+  background-color: #a45058 !important;
 }

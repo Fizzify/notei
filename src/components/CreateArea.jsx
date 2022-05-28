@@ -1,12 +1,15 @@
 import React, { useState, useRef } from "react";
 import AddIcon from "@mui/icons-material/Add";
+import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import Fab from "@mui/material/Fab";
-import { Zoom } from "@mui/material";
+import { Tooltip, Zoom } from "@mui/material";
+import { v4 as uuidv4 } from "uuid";
 
 function CreateArea(props) {
   const [note, setNote] = useState({
     title: "",
     content: "",
+    id: uuidv4(),
   });
   const [isExpanded, setIsExpanded] = useState(false);
   const [isExecuted, setIsExecuted] = useState(false);
@@ -26,6 +29,7 @@ function CreateArea(props) {
     setNote({
       title: "",
       content: "",
+      id: uuidv4(),
     });
     e.preventDefault();
   }
@@ -38,7 +42,7 @@ function CreateArea(props) {
     if (!isExecuted) {
       setTimeout(() => {
         document.querySelector("input[name='title']").focus();
-        setIsExecuted(true), 1000;
+        setIsExecuted(true), 0;
       });
     } else {
     }
@@ -62,14 +66,25 @@ function CreateArea(props) {
           value={note.content}
           name="content"
           placeholder="Take a note..."
-          rows={isExpanded ? 3 : "1"}
+          rows={isExpanded ? 3 : 1}
           autoComplete="off"
         />
-        <Zoom in={isExpanded ? true : false}>
-          <Fab onClick={handleClick}>
-            <AddIcon />
-          </Fab>
-        </Zoom>
+        <div style={{ display: isExpanded ? "block" : "none" }}>
+          <Zoom in={isExpanded ? true : false}>
+            <Tooltip title="Add Note">
+              <Fab onClick={handleClick}>
+                <AddIcon />
+              </Fab>
+            </Tooltip>
+          </Zoom>
+          <Zoom in={isExpanded ? true : false}>
+            <Tooltip title="Delete All Notes">
+              <Fab onClick={props.onDeleteAll} className="deleteAll">
+                <DeleteForeverIcon />
+              </Fab>
+            </Tooltip>
+          </Zoom>
+        </div>
       </form>
     </div>
   );
