@@ -5,7 +5,7 @@
 }
 
 html {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", sans-serif !important;
 }
 
 body {
@@ -42,7 +42,7 @@ footer {
 }
 
 footer p {
-  color: rgb(204, 204, 204);
+  color: rgb(194, 194, 194);
 }
 
 .note {
@@ -102,9 +102,13 @@ form.create-note textarea {
   border: none;
   padding: 4px;
   outline: none;
-  font-size: 1.2em;
+  font-size: 1.2rem;
   font-family: inherit;
   resize: none;
+}
+
+form.create-note textarea {
+  font-size: 1rem;
 }
 
 form.create-note button {

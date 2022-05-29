@@ -1,11 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import Note from "./Note";
 import CreateArea from "./CreateArea";
+import Welcome from "./Welcome"
 
 function App() {
   const [notes, setNotes] = useState([]);
+
+  useEffect(() => {
+    const data = localStorage.getItem("user-notes");
+    if (data) {
+      setNotes(JSON.parse(data));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("user-notes", JSON.stringify(notes));
+  });
 
   function addNote(newNote) {
     document.getElementById("add").currentTime = 0;
@@ -30,6 +42,7 @@ function App() {
   }
   return (
     <div>
+      <Welcome />
       <Header />
       <CreateArea onAdd={addNote} onDeleteAll={deleteAllNotes} />
       <div className="notes">
