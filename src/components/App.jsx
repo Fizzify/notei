@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
-import Note from "./Note";
 import CreateArea from "./CreateArea";
+import Note from "./Note";
 import Welcome from "./Welcome";
 
 function App() {
@@ -50,8 +50,12 @@ function App() {
       <Header />
       <CreateArea onAdd={addNote} onDeleteAll={deleteAllNotes} />
       <div className="notes">
-        {notes.map((noteItem) => {
-          return (
+        {!notes.length ? (
+          <h1 id="first-note">
+            To begin, use the create area above to create your first note.
+          </h1>
+        ) : (
+          notes.map((noteItem) => (
             <Note
               key={noteItem.id}
               id={noteItem.id}
@@ -61,8 +65,8 @@ function App() {
               color={noteItem.color}
               onInput={handleInput}
             />
-          );
-        })}
+          ))
+        )}
       </div>
       <Footer />
     </div>

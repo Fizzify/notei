@@ -163,3 +163,9 @@ header button {
   background: transparent;
   color: white;
 }
+
+
+#first-note {
+  color:rgb(166, 166, 166);
+  text-align: center;
+}
