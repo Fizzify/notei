@@ -1,4 +1,4 @@
-import React, { useState  } from "react";
+import React, { useState } from "react";
 import AddIcon from "@mui/icons-material/Add";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import Fab from "@mui/material/Fab";
@@ -9,6 +9,7 @@ function CreateArea(props) {
   const [note, setNote] = useState({
     title: "",
     content: "",
+    color: "white",
     id: uuidv4(),
   });
   const [isExpanded, setIsExpanded] = useState(false);
@@ -30,6 +31,7 @@ function CreateArea(props) {
     setNote({
       title: "",
       content: "",
+      color: "white",
       id: uuidv4(),
     });
     e.preventDefault();
@@ -70,6 +72,14 @@ function CreateArea(props) {
           rows={isExpanded ? 3 : 1}
           autoComplete="off"
         />
+        {isExpanded && (
+          <input
+            onChange={handleChange}
+            value={note.color}
+            type="color"
+            name="color"
+          />
+        )}
         <div style={{ display: isExpanded ? "block" : "none" }}>
           <Zoom in={isExpanded ? true : false}>
             <Tooltip title="Add Note">

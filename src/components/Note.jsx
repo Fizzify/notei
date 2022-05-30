@@ -4,9 +4,7 @@ import { Tooltip } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 
 function Note(props) {
-  const [noteStyle, setNoteStyle] = useState({
-    opacity: 1,
-  });
+  const [noteOpacity, setNoteOpacity] = useState("1");
   function handleClick() {
     document.getElementById("delete").currentTime = 0;
     props.onDelete(props.id);
@@ -14,20 +12,16 @@ function Note(props) {
   }
 
   function handleStart() {
-    setNoteStyle({
-      opacity: 0.4,
-    });
+    setNoteOpacity("0.4");
   }
 
   function handleStop() {
-    setNoteStyle({
-      opacity: 1,
-    });
+    setNoteOpacity("1");
   }
 
   return (
     <Draggable onStart={handleStart} onStop={handleStop}>
-      <div className="note" style={noteStyle}>
+      <div className="note" style={{ opacity: noteOpacity, backgroundColor: props.color }}>
         <h1
           id="title"
           onInput={(e) => props.onInput(e)}

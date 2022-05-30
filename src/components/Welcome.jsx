@@ -18,12 +18,18 @@ function Welcome() {
     setOpen(false);
   }
 
+  const noteIconStyle = {
+    margin: "0 auto",
+    marginTop: ".5em",
+    fontSize: "2rem",
+  };
+
   return (
     <div style={container}>
       <Dialog onClose={handleClose} open={open} style={container}>
-        <NoteIcon style={{margin: "0 auto", marginTop: ".5em", fontSize: "2rem"}} />
+        <NoteIcon style={noteIconStyle} />
         <DialogTitle>Welcome!</DialogTitle>
-        <DialogContentText style={{padding: "1em"}}>
+        <DialogContentText style={{ padding: "1em" }}>
           To get started, click out of this box and add notes! You can also drag
           the notes wherever you want.
         </DialogContentText>

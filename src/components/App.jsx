@@ -58,6 +58,7 @@ function App() {
               onDelete={deleteNote}
               title={noteItem.title}
               content={noteItem.content}
+              color={noteItem.color}
               onInput={handleInput}
             />
           );
