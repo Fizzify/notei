@@ -7,9 +7,10 @@ import { Link } from "react-router-dom";
 function Note({ onDelete, id, onInput, title, content, color }) {
   const [noteOpacity, setNoteOpacity] = useState("1");
   function handleClick() {
-    document.getElementById("delete").currentTime = 0;
+    const deleteNote = new Audio("/delete.mp3")
+    deleteNote.currentTime = 0;
     onDelete(id);
-    document.getElementById("delete").play();
+    deleteNote.play();
   }
 
   function handleStart() {

@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { Button } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 
 function NoteDetails() {
   const { uuid } = useParams();
@@ -14,12 +14,20 @@ function NoteDetails() {
   const [noteFound] = noteFiltered;
 
   return (
-    <div id="note-details">
-      <h1>{noteFound.title}</h1>
-      <p>{noteFound.content}</p>
-      <Link to="/">
-        <Button variant="contained" id="back">Go Back</Button>
-      </Link>
+    <div>
+      {!noteFound ? (
+        <Navigate to="/404" replace />
+      ) : (
+        <div id="note-details">
+          <h1>{noteFound.title}</h1>
+          <p>{noteFound.content}</p>
+          <Link to="/">
+            <Button variant="contained" id="back">
+              Go Back
+            </Button>
+          </Link>
+        </div>
+      )}
     </div>
   );
 }
