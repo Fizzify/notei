@@ -35,9 +35,9 @@ function App() {
   }
 
   function deleteAllNotes() {
-    document.getElementById("delete").currentTime = 0;
+    document.querySelector(".delete").currentTime = 0;
     setNotes([]);
-    document.getElementById("delete").play();
+    document.querySelector(".delete").play();
   }
 
   function handleInput(e) {
