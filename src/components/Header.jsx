@@ -9,6 +9,7 @@ import {
   bindTrigger,
   bindPopover,
 } from "material-ui-popup-state/hooks";
+import { Link } from "react-router-dom";
 
 function Header(children) {
   const popupState = usePopupState({
@@ -19,10 +20,10 @@ function Header(children) {
   return (
     <header>
       <h1>
-        <a href="/">
+        <Link to="/">
           <NoteIcon />
           Notei
-        </a>
+        </Link>
       </h1>
 
       <button {...bindTrigger(popupState)}>

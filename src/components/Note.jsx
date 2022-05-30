@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import Draggable from "react-draggable";
-import { Tooltip } from "@mui/material";
+import { Tooltip, Button } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
+import { Link } from "react-router-dom";
 
-function Note(props) {
+function Note({ onDelete, id, onInput, title, content, color }) {
   const [noteOpacity, setNoteOpacity] = useState("1");
   function handleClick() {
     document.getElementById("delete").currentTime = 0;
-    props.onDelete(props.id);
+    onDelete(id);
     document.getElementById("delete").play();
   }
 
@@ -21,25 +22,26 @@ function Note(props) {
 
   return (
     <Draggable onStart={handleStart} onStop={handleStop}>
-      <div className="note" style={{ opacity: noteOpacity, backgroundColor: props.color }}>
+      <div className="note" style={{ opacity: noteOpacity, backgroundColor: color }}>
         <h1
           id="title"
-          onInput={(e) => props.onInput(e)}
+          onInput={(e) => onInput(e)}
           contentEditable="true"
           suppressContentEditableWarning={true}
         >
-          {props.title}
+          {title}
         </h1>
         <p
           id="content"
-          onInput={(e) => props.onInput(e)}
+          onInput={(e) => onInput(e)}
           contentEditable="true"
           suppressContentEditableWarning={true}
         >
-          {props.content}
+          {content}
         </p>
+        <Link to={`/notes/${id}`}><Button color="primary">Go to note</Button></Link>
         <Tooltip title="Delete Note">
-          <button onClick={handleClick}>
+          <button id="delete" onClick={handleClick}>
             <DeleteIcon />
           </button>
         </Tooltip>

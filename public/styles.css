@@ -5,7 +5,7 @@
 }
 
 html {
-  font-family: "Montserrat", sans-serif !important;
+  font-family: "Montserrat", sans-serif;
 }
 
 body {
@@ -36,6 +36,7 @@ header h1 {
 footer {
   position: absolute;
   text-align: center;
+  left: 0;
   bottom: 0;
   width: 100%;
   height: 2.5rem;
@@ -70,10 +71,13 @@ footer p {
 }
 
 .note button {
+  color: #5a667d;
+}
+
+.note #delete {
   position: relative;
   float: right;
   margin-right: 10px;
-  color: #4c566a;
   border: none;
   width: 36px;
   height: 36px;
@@ -141,12 +145,12 @@ form.create-note button:hover {
   background-color: #2e3440;
 }
 
-.deleteAll {
+#delete-all {
   float: right;
   background-color: #bf616a !important;
 }
 
-.deleteAll:hover {
+#delete-all:hover {
   background-color: #a45058 !important;
 }
 
@@ -164,8 +168,35 @@ header button {
   color: white;
 }
 
-
 #first-note {
-  color:rgb(166, 166, 166);
+  font-size: 2rem;
+  position: absolute;
+  color: rgb(190, 190, 190);
   text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#note-details {
+  margin: 5em;
+  padding: 4em;
+}
+
+#note-details h1 {
+  font-size: 3rem;
+}
+
+#note-details p {
+  width: 700px;
+}
+
+#back {
+  margin-top: 2em;
+  background-color: #4c566a;
+}
+
+#back:hover {
+  background-color: #2e3440;
+  transform: 0.3s ease\;
 }

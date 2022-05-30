@@ -90,7 +90,7 @@ function CreateArea(props) {
           </Zoom>
           <Zoom in={isExpanded ? true : false}>
             <Tooltip title="Delete All Notes">
-              <Fab onClick={props.onDeleteAll} className="deleteAll">
+              <Fab onClick={props.onDeleteAll} id="delete-all">
                 <DeleteForeverIcon />
               </Fab>
             </Tooltip>
