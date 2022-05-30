@@ -3,7 +3,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import Note from "./Note";
 import CreateArea from "./CreateArea";
-import Welcome from "./Welcome"
+import Welcome from "./Welcome";
 
 function App() {
   const [notes, setNotes] = useState([]);
@@ -40,6 +40,10 @@ function App() {
     setNotes([]);
     document.getElementById("delete").play();
   }
+
+  function handleInput(e) {
+    const { id, textContent } = e.target;
+  }
   return (
     <div>
       <Welcome />
@@ -54,6 +58,7 @@ function App() {
               onDelete={deleteNote}
               title={noteItem.title}
               content={noteItem.content}
+              onInput={handleInput}
             />
           );
         })}

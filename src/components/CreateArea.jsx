@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState  } from "react";
 import AddIcon from "@mui/icons-material/Add";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import Fab from "@mui/material/Fab";
@@ -24,6 +24,7 @@ function CreateArea(props) {
       };
     });
   }
+
   function handleClick(e) {
     props.onAdd(note);
     setNote({
