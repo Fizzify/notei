@@ -21,6 +21,7 @@ function NoteDetails() {
         <div id="note-details">
           <h1>{noteFound.title}</h1>
           <p>{noteFound.content}</p>
+          <p>{noteFound.date}</p>
           <Link to="/">
             <Button variant="contained" id="back">
               Go Back

@@ -10,6 +10,7 @@ function CreateArea(props) {
     title: "",
     content: "",
     color: "white",
+    date: "",
     id: uuidv4(),
   });
   const [isExpanded, setIsExpanded] = useState(false);
@@ -32,6 +33,7 @@ function CreateArea(props) {
       title: "",
       content: "",
       color: "white",
+      date: "",
       id: uuidv4(),
     });
     e.preventDefault();
@@ -71,6 +73,14 @@ function CreateArea(props) {
           rows={isExpanded ? 3 : 1}
           autoComplete="off"
         />
+        {isExpanded && (
+          <input
+            onChange={handleChange}
+            value={note.date}
+            type="date"
+            name="date"
+          />
+        )}
         {isExpanded && (
           <input
             onChange={handleChange}

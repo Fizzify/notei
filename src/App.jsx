@@ -60,6 +60,7 @@ function App() {
               title={noteItem.title}
               content={noteItem.content}
               color={noteItem.color}
+              date={noteItem.date}
               onDelete={deleteNote}
               onInput={handleInput}
             />

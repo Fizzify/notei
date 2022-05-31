@@ -4,7 +4,7 @@ import { Tooltip, Button } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { Link } from "react-router-dom";
 
-function Note({ onDelete, id, onInput, title, content, color }) {
+function Note({ onDelete, id, onInput, title, content, color, date }) {
   const [noteOpacity, setNoteOpacity] = useState("1");
 
   function handleClick() {
@@ -27,22 +27,36 @@ function Note({ onDelete, id, onInput, title, content, color }) {
         className="note"
         style={{ opacity: noteOpacity, backgroundColor: color }}
       >
-        <h1
-          id="title"
-          onInput={(e) => onInput(e)}
-          contentEditable="true"
-          suppressContentEditableWarning={true}
-        >
-          {title}
-        </h1>
-        <p
-          id="content"
-          onInput={(e) => onInput(e)}
-          contentEditable="true"
-          suppressContentEditableWarning={true}
-        >
-          {content}
-        </p>
+        {title !== "" && (
+          <h1
+            id="title"
+            onInput={(e) => onInput(e)}
+            contentEditable="true"
+            suppressContentEditableWarning={true}
+          >
+            {title}
+          </h1>
+        )}
+        {content !== "" && (
+          <p
+            id="content"
+            onInput={(e) => onInput(e)}
+            contentEditable="true"
+            suppressContentEditableWarning={true}
+          >
+            {content}
+          </p>
+        )}
+        {date !== "" && (
+          <p
+            id="date"
+            onInput={(e) => onInput(e)}
+            contentEditable="true"
+            suppressContentEditableWarning={true}
+          >
+            {date}
+          </p>
+        )}
         <Link to={`/notes/${id}`}>
           <Button color="primary">Go to note</Button>
         </Link>
