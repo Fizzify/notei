@@ -14,7 +14,7 @@ import { Link } from "react-router-dom";
 function Header() {
   const popupState = usePopupState({
     variant: "popover",
-    popupId: "demoPopover",
+    popupId: "infoPopover",
   });
 
   return (

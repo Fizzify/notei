@@ -57,10 +57,10 @@ function App() {
             <Note
               key={noteItem.id}
               id={noteItem.id}
-              onDelete={deleteNote}
               title={noteItem.title}
               content={noteItem.content}
               color={noteItem.color}
+              onDelete={deleteNote}
               onInput={handleInput}
             />
           ))
