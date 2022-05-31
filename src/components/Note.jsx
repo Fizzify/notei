@@ -7,7 +7,6 @@ import { Link } from "react-router-dom";
 function Note({ onDelete, id, onInput, title, content, color }) {
   const [noteOpacity, setNoteOpacity] = useState("1");
 
-
   function handleClick() {
     document.querySelector(".delete").currentTime = 0;
     onDelete(id);
@@ -18,7 +17,7 @@ function Note({ onDelete, id, onInput, title, content, color }) {
     setNoteOpacity("0.4");
   }
 
-  function handleStop() {
+  function handleStop(e, dragElement) {
     setNoteOpacity("1");
   }
 

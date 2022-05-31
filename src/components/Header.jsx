@@ -11,7 +11,7 @@ import {
 } from "material-ui-popup-state/hooks";
 import { Link } from "react-router-dom";
 
-function Header(children) {
+function Header() {
   const popupState = usePopupState({
     variant: "popover",
     popupId: "demoPopover",

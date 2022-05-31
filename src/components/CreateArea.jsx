@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import AddIcon from "@mui/icons-material/Add";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import Fab from "@mui/material/Fab";
@@ -41,15 +41,14 @@ function CreateArea(props) {
     setIsExpanded(true);
   }
 
-  if (isExpanded) {
-    if (!isExecuted) {
-      setTimeout(() => {
+  useEffect(() => {
+    if (isExpanded) {
+      if (!isExecuted) {
         document.querySelector("input[name='title']").focus();
-        setIsExecuted(true), 0;
-      });
-    } else {
+        setIsExecuted(true);
+      }
     }
-  }
+  });
 
   return (
     <div>

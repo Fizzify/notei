@@ -41,7 +41,7 @@ function App() {
   }
 
   function handleInput(e) {
-    const { id, textContent } = e.target;
+    const { id: name, textContent: value } = e.target;
   }
   return (
     <div>
