@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import NoteIcon from "@mui/icons-material/Note";
 import InfoIcon from "@mui/icons-material/Info";
 import Typography from "@mui/material/Typography";
@@ -17,6 +17,15 @@ function Header() {
     popupId: "infoPopover",
   });
 
+  const now = new Date().toLocaleTimeString();
+
+  const [time, setTime] = useState(now);
+
+  setInterval(() => {
+    const newTime = new Date().toLocaleTimeString();
+    setTime(newTime);
+  }, 1000);
+
   return (
     <header>
       <h1>
@@ -25,6 +34,8 @@ function Header() {
           Notei
         </Link>
       </h1>
+
+      <h4 id="time">{time}</h4>
 
       <button {...bindTrigger(popupState)}>
         <Zoom in={true}>
@@ -44,7 +55,11 @@ function Header() {
           horizontal: "center",
         }}
       >
-        <Typography style={{padding: "14px"}}>Notei is a note-taking app for organization. It has a sticky note feel to it as you can drag around the notes wherever you want. This app was made by Fizzify.</Typography>
+        <Typography style={{ padding: "14px" }}>
+          Notei is a note-taking app for organization. It has a sticky note feel
+          to it as you can drag around the notes wherever you want. This app was
+          made by Fizzify.
+        </Typography>
       </Popover>
     </header>
   );

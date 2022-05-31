@@ -230,3 +230,12 @@ header button {
   background-color: #2e3440;
   transform: 0.3s ease;
 }
+
+#time {
+  position: absolute;
+  text-align: center;
+  top: 40px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
