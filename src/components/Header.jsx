@@ -44,7 +44,7 @@ function Header() {
           horizontal: "center",
         }}
       >
-        <Typography style={{padding: "14px"}}>Notei is a note-taking app for organization. It has a sticky note feel to it as you can drag around the notes wherever you want.</Typography>
+        <Typography style={{padding: "14px"}}>Notei is a note-taking app for organization. It has a sticky note feel to it as you can drag around the notes wherever you want. This app was made by Fizzify.</Typography>
       </Popover>
     </header>
   );
