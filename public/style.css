@@ -49,6 +49,10 @@ a {
   text-decoration: none;
 }
 
+button {
+  cursor: pointer;
+}
+
 .note {
   background: white;
   border-radius: 0.5em;
@@ -84,7 +88,6 @@ a {
   border: none;
   width: 36px;
   height: 36px;
-  cursor: pointer;
   outline: none;
   background: transparent;
 }
@@ -139,7 +142,6 @@ form.create-note button {
   width: 36px;
   height: 6px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-  cursor: pointer;
   outline: none;
   transition: 0.3s ease;
 }
@@ -165,7 +167,6 @@ header button {
   border: none;
   width: 36px;
   height: 36px;
-  cursor: pointer;
   outline: none;
   background: transparent;
   color: white;
